@@ -3,7 +3,7 @@ pipeline{
     	stages{
         	stage{
             	steps("Clone the repo from GITHUB"){
-                	git clone 'Need to give github repo url here'
+                	git clone 'https://github.com/Mahendra531/Jenkins_tasks.git'
                 }
                 steps("Maven compile"){
                 	echo 'Maven compile'
