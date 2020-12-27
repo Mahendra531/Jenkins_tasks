@@ -1,0 +1,22 @@
+pipeline{
+	agent any 
+    	stages{
+        	stage{
+            	steps("Clone the repo from GITHUB"){
+                	git clone 'Need to give github repo url here'
+                }
+                steps("Maven compile"){
+                	echo 'Maven compile'
+                	sh 'mvn compile'
+                }
+                steps("Maven build"){
+                	echo 'Maven build'
+                	sh 'mvn build'
+                }
+                steps("Maven install"){
+                	echo 'Maven install'
+                	sh 'mvn install'
+                }
+            }
+    	}
+}
