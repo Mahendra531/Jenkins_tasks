@@ -1,22 +1,30 @@
 pipeline{
 	agent any 
-    	stages{
-        	stage{
-            	steps("Clone the repo from GITHUB"){
-                	git clone 'https://github.com/Mahendra531/Jenkins_tasks.git'
-                }
-                steps("Maven compile"){
-                	echo 'Maven compile'
-                	sh 'mvn compile'
-                }
-                steps("Maven build"){
-                	echo 'Maven build'
-                	sh 'mvn build'
-                }
-                steps("Maven install"){
-                	echo 'Maven install'
-                	sh 'mvn install'
-                }
+	
+    stages{
+        stage("Clone the repo from GITHUB"){
+            steps{
+                echo 'Clone Repo'
+                //git clone 'https://github.com/Mahendra531/Jenkins_tasks.git'
             }
-    	}
+        }
+        stage("Maven compile"){
+            steps{
+                echo 'Maven compile'
+                //sh 'mvn compile'
+            }
+        }
+        stage("Maven build"){
+            steps{
+                echo 'Maven build'
+                //sh 'mvn build'
+            }
+        }
+        stage("Maven install"){
+            steps{
+                echo 'Maven install'
+                //sh 'mvn install'
+            }
+        }
+    }
 }
