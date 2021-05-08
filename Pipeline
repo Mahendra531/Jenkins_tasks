@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Pipeline from GIT') {
+            steps {
+                echo 'Got pipeline from GIT'
+            }
+        }
         stage('Get the updates from QA') {
             steps {
                 echo 'Taking updates from the QA instances'
