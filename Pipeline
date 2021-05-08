@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Get the updates from QA') {
+            steps {
+                echo 'Taking updates from the QA instances'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building and creating war file'
+            }
+        }
+        stage('Copy') {
+            steps {
+                echo 'Updating files from local to server path'
+            }
+        }
+        stage('Backup') {
+            steps {
+                echo 'Taking backup log files'
+            }
+        }
+        stage('Stop server') {
+            steps {
+                echo 'Stoping the server'
+            }
+        }
+        stage('Delete') {
+            steps {
+                echo 'Deleting the log files in the server'
+            }
+        }
+        stage('Change the version') {
+            steps {
+                echo 'Changing the version in jsp files'
+            }
+        }
+        stage('Replace the cloudurl') {
+            steps {
+                echo 'Replacing the clodurl with empty in cloudUrl.jsp file'
+            }
+        }
+        stage('Start the server') {
+            steps {
+                echo 'Restarting the QA instances server'
+            }
+        }
+        stage('Check QA instances') {
+            steps {
+                echo 'Checking whether QA instances are up or not'
+            }
+        }
+    }
+}
